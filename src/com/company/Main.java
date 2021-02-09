@@ -18,27 +18,17 @@ public class Main {
         MusicPlayerOnCommand musicPlayerOnCommand = new MusicPlayerOnCommand(musicPlayer);
         MusicPlayerOffCommand musicPlayerOffCommand = new MusicPlayerOffCommand(musicPlayer);
 
-        //인보커 객체의 커맨드 배열에 커맨드 저장
-        remote.setCommand(0, livingLightOn, livingLightOff);
-        remote.setCommand(1, kitchenLightOn, kitchenLightOff);
-        remote.setCommand(2, musicPlayerOnCommand, musicPlayerOffCommand);
 
-        //인보커 객체 에서 커맨드 객체의 execute() 메소드 호출
+        Command[] partyOn = {livingLightOn, kitchenLightOn, musicPlayerOnCommand};
+        Command[] partyOff = {livingLightOff, kitchenLightOff, musicPlayerOffCommand};
+
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        remote.setCommand(0, partyOnMacro, partyOffMacro);
+
         remote.onButtonPressed(0);
-        remote.onButtonPressed(1);
-        remote.onButtonPressed(2);
-
         remote.undoButtonPressed();
-
         remote.offButtonPressed(0);
-        remote.offButtonPressed(1);
-        remote.offButtonPressed(2);
-
-        remote.undoButtonPressed();
-
-        remote.onButtonPressed(4);
-        remote.offButtonPressed(4);
-
-        remote.undoButtonPressed();
     }
 }
