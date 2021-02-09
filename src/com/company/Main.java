@@ -3,6 +3,14 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        MicrowaveFacade microwave = new MicrowaveFacade(Mode.FAST);
+        microwave.on();
+
+        try {
+            Thread.sleep(2000);
+            microwave.off();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
