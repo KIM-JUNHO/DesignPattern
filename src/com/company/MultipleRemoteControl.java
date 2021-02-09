@@ -3,6 +3,7 @@ package com.company;
 public class MultipleRemoteControl {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand;
 
     public MultipleRemoteControl() {
         onCommands = new Command[7];
@@ -12,6 +13,7 @@ public class MultipleRemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommand = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -21,9 +23,15 @@ public class MultipleRemoteControl {
 
     public void onButtonPressed(int slot) {
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
     }
 
     public void offButtonPressed(int slot) {
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonPressed() {
+        undoCommand.undo();
     }
 }

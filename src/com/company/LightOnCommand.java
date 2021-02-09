@@ -11,4 +11,10 @@ public class LightOnCommand implements Command {
     public void execute() {
         light.on();
     }
+
+    @Override
+    public void undo() {
+        System.out.println("-----작업 취소-----");
+        light.off();
+    }
 }

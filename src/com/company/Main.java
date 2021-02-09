@@ -28,12 +28,17 @@ public class Main {
         remote.onButtonPressed(1);
         remote.onButtonPressed(2);
 
+        remote.undoButtonPressed();
+
         remote.offButtonPressed(0);
         remote.offButtonPressed(1);
         remote.offButtonPressed(2);
 
+        remote.undoButtonPressed();
+
         remote.onButtonPressed(4);
         remote.offButtonPressed(4);
 
+        remote.undoButtonPressed();
     }
 }
