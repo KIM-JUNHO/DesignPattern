@@ -3,6 +3,11 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        SimpleRemoteControl remote = new SimpleRemoteControl();
+        Light light = new Light();
+        LightOnCommand lightOn = new LightOnCommand(light);
+
+        remote.setCommand(lightOn);
+        remote.buttonPressed();
     }
 }
