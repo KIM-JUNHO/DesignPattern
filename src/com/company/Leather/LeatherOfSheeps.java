@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Leather;
 
 public class LeatherOfSheeps implements Leather {
     @Override

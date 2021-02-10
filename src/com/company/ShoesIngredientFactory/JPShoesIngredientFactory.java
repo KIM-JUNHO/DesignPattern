@@ -1,4 +1,9 @@
-package com.company;
+package com.company.ShoesIngredientFactory;
+
+import com.company.Bottom.Bottom;
+import com.company.Leather.Leather;
+import com.company.Leather.LeatherOfCows;
+import com.company.Bottom.RubberBottom;
 
 public class JPShoesIngredientFactory implements ShoesIngredientFactory {
     @Override

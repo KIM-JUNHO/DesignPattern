@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Bottom;
 
 public class PlasticAndRubberBottom implements Bottom {
 

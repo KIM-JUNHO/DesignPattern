@@ -1,15 +1,17 @@
-package com.company;
+package com.company.Beverage;
 
-public class BrownShoes extends Shoes {
+import com.company.ShoesIngredientFactory.ShoesIngredientFactory;
+
+public class RedBeverage extends Beverage {
 
     ShoesIngredientFactory shoesIngredientFactory;
 
-    public BrownShoes(ShoesIngredientFactory shoesIngredientFactory) {
+    public RedBeverage(ShoesIngredientFactory shoesIngredientFactory) {
         this.shoesIngredientFactory = shoesIngredientFactory;
     }
 
     @Override
-    void assembling() {
+    public void assembling() {
         // TODO Auto-generated method stub
 
         System.out.println("신발을 만들고 있습니다.. " + name);

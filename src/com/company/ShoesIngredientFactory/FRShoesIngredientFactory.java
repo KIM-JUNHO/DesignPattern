@@ -1,4 +1,9 @@
-package com.company;
+package com.company.ShoesIngredientFactory;
+
+import com.company.Bottom.Bottom;
+import com.company.Leather.Leather;
+import com.company.Leather.LeatherOfSheeps;
+import com.company.Bottom.PlasticAndRubberBottom;
 
 public class FRShoesIngredientFactory implements ShoesIngredientFactory {
     @Override

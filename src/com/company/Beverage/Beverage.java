@@ -1,19 +1,22 @@
-package com.company;
+package com.company.Beverage;
 
-public abstract class Shoes {
+import com.company.Bottom.Bottom;
+import com.company.Leather.Leather;
+
+public abstract class Beverage {
     String name;
     Bottom bottom;
     Leather leather;
     boolean hasPattern;
 
-    abstract void assembling();
+    public abstract void assembling();
 
-    void prepare() {
+    public void prepare() {
 
         System.out.println("완성된 신발을 준비 중 입니다..");
     }
 
-    void packing() {
+    public void packing() {
 
         System.out.println("신발을 포장 하고 있습니다..");
     }

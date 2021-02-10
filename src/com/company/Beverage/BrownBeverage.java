@@ -1,10 +1,12 @@
-package com.company;
+package com.company.Beverage;
 
-public class RedShoes extends Shoes {
+import com.company.ShoesIngredientFactory.ShoesIngredientFactory;
+
+public class BrownBeverage extends Beverage {
 
     ShoesIngredientFactory shoesIngredientFactory;
 
-    public RedShoes(ShoesIngredientFactory shoesIngredientFactory) {
+    public BrownBeverage(ShoesIngredientFactory shoesIngredientFactory) {
         this.shoesIngredientFactory = shoesIngredientFactory;
     }
 
