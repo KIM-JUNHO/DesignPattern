@@ -10,7 +10,7 @@ public class BlackBeverage extends Beverage {
     }
 
     @Override
-    void assembling() {
+    public void assembling() {
         // TODO Auto-generated method stub
 
         System.out.println("신발을 만들고 있습니다.. " + name);
