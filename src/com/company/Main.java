@@ -6,10 +6,8 @@ import com.company.cupdispenser.product.CupDispenser;
 import com.company.icemaker.creator.IceMakerFactory;
 import com.company.icemaker.creator.concrecreator.VendorIDIceMakerFactory;
 import com.company.icemaker.product.IceMaker;
-import com.company.store.abstractfactory.StoreFactory;
-import com.company.store.abstractfactory.concretefactory.NespressoStoreFactory;
-import com.company.store.abstractfactory.concretefactory.SamsungStoreFactory;
-import com.company.store.abstractproduct.Store;
+import com.company.store.Store;
+import com.company.store.StoreFactoryFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,12 +23,12 @@ public class Main {
         System.out.println(samsungIceMaker.getName());
         System.out.println(nespressoIceMaker.getName());
 
-        Store samsungStore = StoreFactory.getStore(new SamsungStoreFactory());
+        System.out.println(StoreFactoryFactory.getStoreFactory(VendorID.SAMSUNG).createCupDispenser().getName());
+        System.out.println(StoreFactoryFactory.getStoreFactory(VendorID.SAMSUNG).createIceMaker().getName());
+
+        Store samsungStore = new Store(VendorID.SAMSUNG);
         System.out.println(samsungStore.iceMaker.getName());
         System.out.println(samsungStore.cupDispenser.getName());
 
-        Store nespressoStore = StoreFactory.getStore(new NespressoStoreFactory());
-        System.out.println(nespressoStore.iceMaker.getName());
-        System.out.println(nespressoStore.cupDispenser.getName());
     }
 }

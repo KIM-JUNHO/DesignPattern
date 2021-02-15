@@ -1,12 +1,25 @@
 package com.company.store.abstractfactory.concretefactory;
 
-import com.company.store.abstractfactory.StoreAbstractFactory;
-import com.company.store.abstractproduct.Store;
-import com.company.store.abstractproduct.concreteproduct.NespressoStore;
+import com.company.cupdispenser.product.CupDispenser;
+import com.company.cupdispenser.product.concreteproduct.NespressoCupDispenser;
+import com.company.icemaker.product.IceMaker;
+import com.company.icemaker.product.concreteproduct.NespressoIceMaker;
+import com.company.store.abstractfactory.StoreFactory;
 
-public class NespressoStoreFactory implements StoreAbstractFactory {
+public class NespressoStoreFactory extends StoreFactory {
+    private static final NespressoStoreFactory nespressoStoreFactory = new NespressoStoreFactory();
+
+    public static NespressoStoreFactory getInstance() {
+        return nespressoStoreFactory;
+    }
+
     @Override
-    public Store createStore() {
-        return new NespressoStore();
+    public IceMaker createIceMaker() {
+        return new NespressoIceMaker();
+    }
+
+    @Override
+    public CupDispenser createCupDispenser() {
+        return new NespressoCupDispenser();
     }
 }
