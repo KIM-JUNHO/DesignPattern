@@ -7,6 +7,11 @@ import com.company.cupdispenser.product.concreteproduct.NespressoCupDispenser;
 import com.company.cupdispenser.product.concreteproduct.SamsungCupDispenser;
 
 public class VendorIDCupDispenserFactory extends CupDispenserFactory {
+    private static final VendorIDCupDispenserFactory vendorIDCupDispenserFactory = new VendorIDCupDispenserFactory();
+    public static VendorIDCupDispenserFactory getInstance() {
+        return vendorIDCupDispenserFactory;
+    }
+
     @Override
     public CupDispenser createCupDispenser(VendorID vendorID) {
         switch (vendorID) {

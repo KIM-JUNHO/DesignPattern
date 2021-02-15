@@ -7,6 +7,10 @@ import com.company.icemaker.product.concreteproduct.NespressoIceMaker;
 import com.company.icemaker.product.concreteproduct.SamsungIceMaker;
 
 public class VendorIDIceMakerFactory extends IceMakerFactory {
+    private static final VendorIDIceMakerFactory vendorIDIceMakerFactory = new VendorIDIceMakerFactory();
+    public static VendorIDIceMakerFactory getInstance() {
+        return vendorIDIceMakerFactory;
+    }
     @Override
     public IceMaker createIceMaker(VendorID vendorID) {
         switch (vendorID) {
