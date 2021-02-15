@@ -1,8 +1,10 @@
 package com.company;
 
-public class Main {
+import com.company.cupdispenser.creator.concretecreator.SamsungCupDispenserFactory;
+import com.company.cupdispenser.product.CupDispenser;
 
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        CupDispenser samsungCupDispenser = new SamsungCupDispenserFactory().createCupDispenser();
     }
 }
